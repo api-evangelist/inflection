@@ -3,7 +3,7 @@ url: https://raw.githubusercontent.com/api-evangelist/inflection/refs/heads/main
 name: Inflection AI
 x-type: company
 description: >-
-  Inflection AI is a foundation model company behind the Pi personal AI assistant and the Inflection-2.5 family of LLMs. The Inflection API serves the company's models for enterprise integration.
+  Inflection AI is a foundation-model company behind the Pi personal AI assistant and the Inflection 3.0 family of empathetic large language models (Pi, Productivity). The Inflection Developer API serves these proprietary models for enterprise integration with cloud and on-premise deployment options.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -11,13 +11,99 @@ tags:
   - Personal AI
   - Pi
   - Foundation Models
+  - Empathetic AI
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: inflection:inflection-chat-api
+    name: Inflection Chat API
+    tags:
+      - Chat
+      - Completions
+      - LLM
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.inflection.ai/docs
+    baseURL: https://layercake.pubwestus3.inf7ks8.com
+    properties:
+      - url: https://developers.inflection.ai/docs
+        type: Documentation
+      - url: https://developers.inflection.ai/docs/api-reference
+        type: API Reference
+    description: >-
+      Generates chat-style completions against Inflection's empathetic foundation models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with streaming responses.
+  - aid: inflection:inflection-models-api
+    name: Inflection Models API
+    tags:
+      - Models
+      - Catalog
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.inflection.ai/docs/api-reference
+    baseURL: https://layercake.pubwestus3.inf7ks8.com
+    properties:
+      - url: https://developers.inflection.ai/docs/api-reference
+        type: API Reference
+    description: >-
+      Lists the available Inflection 3.0 models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with metadata.
+  - aid: inflection:inflection-playground
+    name: Inflection Playground
+    tags:
+      - Playground
+      - Testing
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.inflection.ai/playground
+    baseURL: https://developers.inflection.ai
+    properties:
+      - url: https://developers.inflection.ai/playground
+        type: Documentation
+    description: >-
+      Browser-based playground for prototyping prompts and evaluating Inflection 3.0 models.
+  - aid: inflection:inflection-usage-api
+    name: Inflection Usage API
+    tags:
+      - Usage
+      - Metrics
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.inflection.ai/usage
+    baseURL: https://developers.inflection.ai
+    properties:
+      - url: https://developers.inflection.ai/usage
+        type: Documentation
+    description: >-
+      Surfaces usage metrics and rate-limit consumption for the developer account.
+  - aid: inflection:inflection-pi-app
+    name: Pi Personal AI
+    tags:
+      - Pi
+      - Consumer
+      - Personal AI
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://pi.ai/
+    baseURL: https://pi.ai/
+    properties:
+      - url: https://pi.ai/
+        type: Website
+    description: >-
+      Pi consumer chat product (web, iOS, Android, WhatsApp, SMS, Telegram) - empathetic personal AI assistant. Not a developer surface; access is via consumer apps.
+  - aid: inflection:inflection-enterprise
+    name: Inflection for Enterprise
+    tags:
+      - Enterprise
+      - On-Prem
+      - Sovereign AI
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://inflection.ai/
+    baseURL: https://inflection.ai/
+    properties:
+      - url: https://inflection.ai/
+        type: Documentation
+    description: >-
+      Enterprise deployment of Inflection 3.0 models including a purpose-built on-premise server option for data locality and TCO optimization. Contact sales.
 common:
   - type: Website
     url: https://inflection.ai/
+  - type: Documentation
+    url: https://developers.inflection.ai/
   - type: Plans
     url: plans/inflection-plans-pricing.yml
   - type: RateLimits

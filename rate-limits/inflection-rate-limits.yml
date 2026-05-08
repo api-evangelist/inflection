@@ -15,22 +15,42 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Inflection AI. Replace with real limits once the pipeline
-  researches the provider's rate-limit documentation.
-notes: Initial scaffold — limits have not yet been reconciled against the provider's documentation.
+description: >-
+  Inflection AI's Developer API exposes a usage dashboard at
+  developers.inflection.ai/usage that surfaces account-level rate-limit
+  consumption. The exact RPM / TPM values per model and tier are not
+  publicly documented and are pending reconciliation; in practice they
+  are set per contract.
+notes: >-
+  Verify in the Inflection developer console for the active account.
+  On-premise enterprise servers are bounded by hardware capacity rather
+  than shared-cloud limits.
 sources:
+- https://developers.inflection.ai/
 - https://inflection.ai/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Requests Per Minute (RPM)
   scope: account
-  metric: varies
+  metric: requests
   limit: see provider documentation
-  notes: Pending reconciliation.
+  notes: Per-model RPM, varies by contract. Pending reconciliation.
+- name: Tokens Per Minute (TPM)
+  scope: account
+  metric: tokens
+  limit: see provider documentation
+  notes: Per-model TPM, varies by contract. Pending reconciliation.
+- name: On-Premise Throughput
+  scope: deployment
+  metric: requests
+  limit: bounded by purpose-built server capacity
+  notes: On-premise deployments are limited by the configured server hardware.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Clients should implement exponential backoff with jitter and honor Retry-After.
+- name: Tiered Limits
+  description: Higher limits unlocked through Enterprise contract.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

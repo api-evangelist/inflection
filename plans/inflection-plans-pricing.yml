@@ -12,31 +12,104 @@ tags:
 - Personal AI
 - Pi
 - Foundation Models
+- Empathetic AI
 - Plans
-description: Placeholder plans/pricing artifact for Inflection AI. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: >-
+  Inflection AI offers two product surfaces: the consumer Pi assistant
+  (free across web/mobile/messaging) and a Developer API plus Inflection
+  for Enterprise (cloud or purpose-built on-prem servers). Public
+  per-token / per-server pricing is not disclosed - Enterprise contracts
+  are negotiated directly. Pi consumer access is currently free.
+notes: >-
+  No public per-token rate card or self-serve pricing for the Developer
+  API. Pi remains free to consumers on supported channels.
 sources:
 - https://inflection.ai/
+- https://developers.inflection.ai/
+- https://pi.ai/
 plans:
-- id: inflection-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers (Free / Pro / Enterprise / pay-as-you-go,
-    etc.) once pricing is reconciled.
+- id: inflection-pi-consumer
+  name: Pi (Consumer)
+  type: free
+  description: >-
+    Free consumer access to Pi across web, iOS, Android, WhatsApp, SMS,
+    and Telegram channels.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Pi Access
+    name: pi_consumer
     type: flat
-    metric: varies
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0
+    userMultiplied: false
+  elements:
+  - name: Web
+  - name: iOS
+  - name: Android
+  - name: WhatsApp
+  - name: SMS
+  - name: Telegram
+- id: inflection-developer
+  name: Developer API
+  type: usage
+  description: >-
+    Developer API access to Inflection 3.0 models (inflection_3_pi,
+    inflection_3_productivity, Pi-3.1) via developers.inflection.ai.
+    Per-token pricing is not publicly disclosed; contact sales for an
+    enterprise rate card.
+  entries:
+  - label: API Access (per-token)
+    name: api_tokens
+    type: usage
+    metric: tokens
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1000000
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: inflection_3_pi
+  - name: inflection_3_productivity
+  - name: Pi-3.1
+  - name: Playground
+  - name: Usage Dashboard
+- id: inflection-enterprise
+  name: Inflection for Enterprise
+  type: enterprise
+  description: >-
+    Enterprise deployment of Inflection 3.0 models including cloud
+    consumption and a purpose-built on-premise server option for data
+    locality and reduced TCO. Negotiated contracts; contact sales.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  - label: On-Premise Server
+    name: on_prem_server
+    type: flat
+    metric: server
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://inflection.ai/
+    price: contact sales (purpose-built hardware)
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: Cloud Deployment
+  - name: On-Premise Deployment
+  - name: Data Locality
+  - name: Custom Fine-Tuning
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
