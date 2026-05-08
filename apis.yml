@@ -30,6 +30,8 @@ apis:
         type: Documentation
       - url: https://developers.inflection.ai/docs/api-reference
         type: API Reference
+      - url: openapi/inflection-openapi.json
+        type: OpenAPI
     description: >-
       Generates chat-style completions against Inflection's empathetic foundation models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with streaming responses.
   - aid: inflection:inflection-models-api
@@ -43,6 +45,8 @@ apis:
     properties:
       - url: https://developers.inflection.ai/docs/api-reference
         type: API Reference
+      - url: openapi/inflection-openapi.json
+        type: OpenAPI
     description: >-
       Lists the available Inflection 3.0 models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with metadata.
   - aid: inflection:inflection-playground
@@ -56,6 +60,8 @@ apis:
     properties:
       - url: https://developers.inflection.ai/playground
         type: Documentation
+      - url: openapi/inflection-openapi.json
+        type: OpenAPI
     description: >-
       Browser-based playground for prototyping prompts and evaluating Inflection 3.0 models.
   - aid: inflection:inflection-usage-api
@@ -69,6 +75,8 @@ apis:
     properties:
       - url: https://developers.inflection.ai/usage
         type: Documentation
+      - url: openapi/inflection-openapi.json
+        type: OpenAPI
     description: >-
       Surfaces usage metrics and rate-limit consumption for the developer account.
   - aid: inflection:inflection-pi-app
@@ -83,6 +91,8 @@ apis:
     properties:
       - url: https://pi.ai/
         type: Website
+      - url: openapi/inflection-openapi.json
+        type: OpenAPI
     description: >-
       Pi consumer chat product (web, iOS, Android, WhatsApp, SMS, Telegram) - empathetic personal AI assistant. Not a developer surface; access is via consumer apps.
   - aid: inflection:inflection-enterprise
@@ -97,6 +107,8 @@ apis:
     properties:
       - url: https://inflection.ai/
         type: Documentation
+      - url: openapi/inflection-openapi.json
+        type: OpenAPI
     description: >-
       Enterprise deployment of Inflection 3.0 models including a purpose-built on-premise server option for data locality and TCO optimization. Contact sales.
 common:
