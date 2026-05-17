@@ -1,7 +1,7 @@
 aid: inflection
 url: https://raw.githubusercontent.com/api-evangelist/inflection/refs/heads/main/apis.yml
 name: Inflection AI
-x-type: company
+kind: company
 description: >-
   Inflection AI is a foundation-model company behind the Pi personal AI assistant and the Inflection 3.0 family of empathetic large language models (Pi, Productivity). The Inflection Developer API serves these proprietary models for enterprise integration with cloud and on-premise deployment options.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -29,7 +29,7 @@ apis:
       - url: https://developers.inflection.ai/docs
         type: Documentation
       - url: https://developers.inflection.ai/docs/api-reference
-        type: API Reference
+        type: APIReference
       - url: openapi/inflection-openapi.json
         type: OpenAPI
     description: >-
@@ -44,7 +44,7 @@ apis:
     baseURL: https://layercake.pubwestus3.inf7ks8.com
     properties:
       - url: https://developers.inflection.ai/docs/api-reference
-        type: API Reference
+        type: APIReference
       - url: openapi/inflection-openapi.json
         type: OpenAPI
     description: >-
