@@ -1,0 +1,1234 @@
+{
+  "item": [
+    {
+      "id": "2cc167ea-af35-409e-a2b2-6461c32ff2a5",
+      "name": "Status ",
+      "request": {
+        "name": "Status ",
+        "description": {},
+        "url": {
+          "path": [
+            "status"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b35d35c1-c230-4809-993a-5abd0d31f112",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "11472b3b-c9ec-45d4-ae8c-b6614bd78f4d",
+      "name": "Chat Completions",
+      "request": {
+        "name": "Chat Completions",
+        "description": {
+          "content": "Chat completions endpoint for Inflection hosted models.\n\n⚠️ This endpoint is under active development to enable all Inflection model and config types.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "chat",
+            "completions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"content\": \"<string>\",\n      \"role\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"role\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"frequency_penalty\": \"<number>\",\n  \"logit_bias\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\",\n    \"key_2\": \"<number>\",\n    \"key_3\": \"<number>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<integer>\",\n  \"max_tokens\": \"<integer>\",\n  \"max_completion_tokens\": \"<integer>\",\n  \"n\": \"<integer>\",\n  \"presence_penalty\": \"<number>\",\n  \"response_format\": {\n    \"type\": \"<string>\",\n    \"json_schema\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": \"<object>\",\n      \"strict\": \"<boolean>\"\n    }\n  },\n  \"seed\": \"<integer>\",\n  \"stop\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\",\n    \"continuous_usage_stats\": \"<boolean>\",\n    \"key_0\": 8856.236320591037,\n    \"key_1\": 7464,\n    \"key_2\": 2755\n  },\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"parallel_tool_calls\": \"<boolean>\",\n  \"user\": \"<string>\",\n  \"best_of\": \"<integer>\",\n  \"use_beam_search\": false,\n  \"top_k\": \"<integer>\",\n  \"min_p\": \"<number>\",\n  \"repetition_penalty\": \"<number>\",\n  \"length_penalty\": 1,\n  \"stop_token_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"include_stop_str_in_output\": false,\n  \"ignore_eos\": false,\n  \"min_tokens\": 0,\n  \"skip_special_tokens\": true,\n  \"spaces_between_special_tokens\": true,\n  \"truncate_prompt_tokens\": \"<integer>\",\n  \"prompt_logprobs\": \"<integer>\",\n  \"allowed_token_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"bad_words\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"echo\": false,\n  \"add_generation_prompt\": true,\n  \"continue_final_message\": false,\n  \"add_special_tokens\": false,\n  \"documents\": [\n    {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    {\n      \"key_0\": \"<string>\"\n    }\n  ],\n  \"chat_template\": \"<string>\",\n  \"chat_template_kwargs\": \"<object>\",\n  \"mm_processor_kwargs\": \"<object>\",\n  \"guided_json\": \"<string>\",\n  \"guided_regex\": \"<string>\",\n  \"guided_choice\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"guided_grammar\": \"<string>\",\n  \"structural_tag\": \"<string>\",\n  \"guided_decoding_backend\": \"<string>\",\n  \"guided_whitespace_pattern\": \"<string>\",\n  \"guided_meta\": \"<object>\",\n  \"priority\": 0,\n  \"request_id\": \"<string>\",\n  \"logits_processors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"return_tokens_as_token_ids\": \"<boolean>\",\n  \"cache_salt\": \"<string>\",\n  \"kv_transfer_params\": \"<object>\",\n  \"vllm_xargs\": {\n    \"key_0\": \"<string>\"\n  },\n  \"timeout_sec\": \"<number>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "d438745e-a7d5-4a8d-a36b-edccb3b7a019",
+          "name": "Returns either the full response (`application/json`) or streams multiple `ChatCompletionStreamResponse` objects via `text/event-stream`. Each event in the stream is a JSON object matching the ChatCompletionStreamResponse schema, and each event is prefixed by `data:` (typical for Server-Sent Events).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"inflection_3_pi\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"What is the weather like today?\"\n    }\n  ],\n  \"max_tokens\": 150,\n  \"temperature\": 0.7\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmpl-5y3yYz9d7Gv0yWw8\",\n  \"object\": \"chat.completion\",\n  \"created\": 1627290155,\n  \"model\": \"inflection_3_pi\",\n  \"choices\": [\n    {\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"The weather today is sunny, with a high of 25°C.\"\n      },\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 13,\n    \"completion_tokens\": 10,\n    \"total_tokens\": 23\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8e4c3492-f1d4-45b7-85cc-75410dae4232",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"inflection_3_pi\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"What is the weather like today?\"\n    }\n  ],\n  \"max_tokens\": 150,\n  \"temperature\": 0.7\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "64de4eb0-9955-4035-9d4a-4ca160a96447",
+      "name": "Chat Attributes",
+      "request": {
+        "name": "Chat Attributes",
+        "description": {
+          "content": "Get attribute scores for the most recent assistant message in a chat completions style request.\n\n⚠️ Experimental endpoint for evaluating message attributes.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "chat",
+            "attributes"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"content\": \"<string>\",\n      \"role\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"role\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"frequency_penalty\": \"<number>\",\n  \"logit_bias\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<integer>\",\n  \"max_tokens\": \"<integer>\",\n  \"max_completion_tokens\": \"<integer>\",\n  \"n\": \"<integer>\",\n  \"presence_penalty\": \"<number>\",\n  \"response_format\": {\n    \"type\": \"<string>\",\n    \"json_schema\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": \"<object>\",\n      \"strict\": \"<boolean>\"\n    }\n  },\n  \"seed\": \"<integer>\",\n  \"stop\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\",\n    \"continuous_usage_stats\": \"<boolean>\",\n    \"key_0\": 546,\n    \"key_1\": 3279.178097796398,\n    \"key_2\": 2337.983347177811\n  },\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"parallel_tool_calls\": \"<boolean>\",\n  \"user\": \"<string>\",\n  \"best_of\": \"<integer>\",\n  \"use_beam_search\": false,\n  \"top_k\": \"<integer>\",\n  \"min_p\": \"<number>\",\n  \"repetition_penalty\": \"<number>\",\n  \"length_penalty\": 1,\n  \"stop_token_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"include_stop_str_in_output\": false,\n  \"ignore_eos\": false,\n  \"min_tokens\": 0,\n  \"skip_special_tokens\": true,\n  \"spaces_between_special_tokens\": true,\n  \"truncate_prompt_tokens\": \"<integer>\",\n  \"prompt_logprobs\": \"<integer>\",\n  \"allowed_token_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"bad_words\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"echo\": false,\n  \"add_generation_prompt\": true,\n  \"continue_final_message\": false,\n  \"add_special_tokens\": false,\n  \"documents\": [\n    {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    {\n      \"key_0\": \"<string>\"\n    }\n  ],\n  \"chat_template\": \"<string>\",\n  \"chat_template_kwargs\": \"<object>\",\n  \"mm_processor_kwargs\": \"<object>\",\n  \"guided_json\": \"<string>\",\n  \"guided_regex\": \"<string>\",\n  \"guided_choice\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"guided_grammar\": \"<string>\",\n  \"structural_tag\": \"<string>\",\n  \"guided_decoding_backend\": \"<string>\",\n  \"guided_whitespace_pattern\": \"<string>\",\n  \"guided_meta\": \"<object>\",\n  \"priority\": 0,\n  \"request_id\": \"<string>\",\n  \"logits_processors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"return_tokens_as_token_ids\": \"<boolean>\",\n  \"cache_salt\": \"<string>\",\n  \"kv_transfer_params\": \"<object>\",\n  \"vllm_xargs\": {\n    \"key_0\": \"<string>\"\n  },\n  \"timeout_sec\": \"<number>\",\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"definition\": \"<string>\",\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"positive\": \"<boolean>\",\n      \"example\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"definition\": \"<string>\",\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"positive\": \"<boolean>\",\n      \"example\": \"<string>\"\n    }\n  ],\n  \"filter_categories\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"disable_attributes_prompt\": \"<boolean>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "8e863be7-a7cf-4dfd-b4e4-6f7c43349961",
+          "name": "\nReturns attribute scores for the final assistant message. If no attributes are provided, a set of default attributes is used.\n\nScores are provided in JSON format as `{\"AttributeName\": {\"score\": float, \"positive\": bool}, ...}` in the first Choice message content.\n",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "attributes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"Pi-3.1\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Tell me about quantum computing.\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"No way.\"\n    }\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"Helpful\",\n      \"definition\": \"The assistant is helpful and provides useful information.\",\n      \"categories\": [\n        \"Assistant\"\n      ]\n    },\n    {\n      \"name\": \"Rude\",\n      \"definition\": \"The assistant uses mean or offensive language or is otherwise rude.\",\n      \"categories\": [\n        \"Assistant\"\n      ]\n    }\n  ],\n  \"filter_categories\": [\n    \"Assistant\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"chatcmpl-xyz789\",\n  \"object\": \"chat.completion\",\n  \"created\": 1627290155,\n  \"model\": \"Pi-3.1\",\n  \"choices\": [\n    {\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"{\\\"Helpful\\\": {\\\"score\\\": 0.1, \\\"positive\\\": true}, \\\"Rude\\\": {\\\"score\\\": 0.9, \\\"positive\\\": false}}\"\n      },\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 135,\n    \"completion_tokens\": 20,\n    \"total_tokens\": 155\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ad7ff1ee-4ab9-4282-abe3-b72f03ab0c9c",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "attributes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"Pi-3.1\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Tell me about quantum computing.\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"No way.\"\n    }\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"Helpful\",\n      \"definition\": \"The assistant is helpful and provides useful information.\",\n      \"categories\": [\n        \"Assistant\"\n      ]\n    },\n    {\n      \"name\": \"Rude\",\n      \"definition\": \"The assistant uses mean or offensive language or is otherwise rude.\",\n      \"categories\": [\n        \"Assistant\"\n      ]\n    }\n  ],\n  \"filter_categories\": [\n    \"Assistant\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d879e77e-951e-4992-9123-3a5c8d10ee4e",
+      "name": "Embeddings",
+      "request": {
+        "name": "Embeddings",
+        "description": {
+          "content": "Embeddings endpoint for Inflection hosted models.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "embeddings"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"input\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"model\": \"<string>\",\n  \"encoding_format\": \"float\",\n  \"dimensions\": \"<integer>\",\n  \"user\": \"<string>\",\n  \"truncate_prompt_tokens\": \"<integer>\",\n  \"additional_data\": {},\n  \"add_special_tokens\": true,\n  \"priority\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b7a7979c-7586-4de5-8ac3-84de48c9c302",
+          "name": "Returns the embeddings",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "embeddings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"inf_3_1_embedding\",\n  \"input\": \"The quick brown fox jumps over the lazy dog\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"embd-8b2d80eb72634137842d104f671a712b\",\n  \"object\": \"list\",\n  \"created\": 1751327294,\n  \"model\": \"inf_3_1_embedding\",\n  \"data\": [\n    {\n      \"index\": 0,\n      \"object\": \"embedding\",\n      \"embedding\": [\n        0.01,\n        -0.02,\n        0.03\n      ]\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 6,\n    \"completion_tokens\": 0,\n    \"total_tokens\": 6\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0befa82a-24b4-40e0-bb43-e97bc4564831",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "embeddings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"inf_3_1_embedding\",\n  \"input\": \"The quick brown fox jumps over the lazy dog\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2ae50911-355f-4e04-b6c3-6b50f6a3542e",
+      "name": "Configs",
+      "request": {
+        "name": "Configs",
+        "description": {
+          "content": "Get all available configs (for use in the chat completion endpoint `model` field) for an organization.\n\nReturns each config's `name` (aka `model`), `alias` (for UI display), `default_parameters`, and `description`.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "discovery",
+            "configs"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "6a783c65-6674-4e16-8a9c-4429e9d13a60",
+          "name": "List of configs available for the organization",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "discovery",
+                "configs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"name\": \"pi_3_1\",\n    \"alias\": \"Pi (3.1)\",\n    \"default_parameters\": {\n      \"temperature\": {\n        \"range\": [\n          0,\n          1\n        ],\n        \"value\": 1\n      },\n      \"maximumLength\": {\n        \"range\": [\n          1,\n          1024\n        ],\n        \"value\": 256\n      },\n      \"topP\": {\n        \"range\": [\n          0,\n          1\n        ],\n        \"value\": 0.95\n      },\n      \"stopTokens\": {\n        \"range\": [],\n        \"value\": []\n      },\n      \"webSearch\": {\n        \"range\": [],\n        \"value\": true\n      }\n    },\n    \"description\": \"Pi chat assistant based on Llama\"\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "e25434ab-d022-41aa-be96-311706f754b7",
+      "name": "Legacy Chat Completions",
+      "request": {
+        "name": "Legacy Chat Completions",
+        "description": {
+          "content": "Chat completions compatible endpoint for legacy Inflection models.\n\nProvides a compatibility chat completions endpoint to talk with any Inflection model.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "external",
+            "api",
+            "inference",
+            "openai",
+            "v1",
+            "chat",
+            "completions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"messages\": [\n    {\n      \"content\": \"<string>\",\n      \"role\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"role\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"model\": \"<string>\",\n  \"frequency_penalty\": \"<number>\",\n  \"logit_bias\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\",\n    \"key_2\": \"<number>\",\n    \"key_3\": \"<number>\"\n  },\n  \"logprobs\": \"<boolean>\",\n  \"top_logprobs\": \"<integer>\",\n  \"max_tokens\": \"<integer>\",\n  \"max_completion_tokens\": \"<integer>\",\n  \"n\": \"<integer>\",\n  \"presence_penalty\": \"<number>\",\n  \"response_format\": {\n    \"type\": \"<string>\",\n    \"json_schema\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": \"<object>\",\n      \"strict\": \"<boolean>\"\n    }\n  },\n  \"seed\": \"<integer>\",\n  \"stop\": \"<string>\",\n  \"stream\": \"<boolean>\",\n  \"stream_options\": {\n    \"include_usage\": \"<boolean>\",\n    \"continuous_usage_stats\": \"<boolean>\",\n    \"key_0\": 8856.236320591037,\n    \"key_1\": 7464,\n    \"key_2\": 2755\n  },\n  \"temperature\": \"<number>\",\n  \"top_p\": \"<number>\",\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"parallel_tool_calls\": \"<boolean>\",\n  \"user\": \"<string>\",\n  \"best_of\": \"<integer>\",\n  \"use_beam_search\": false,\n  \"top_k\": \"<integer>\",\n  \"min_p\": \"<number>\",\n  \"repetition_penalty\": \"<number>\",\n  \"length_penalty\": 1,\n  \"stop_token_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"include_stop_str_in_output\": false,\n  \"ignore_eos\": false,\n  \"min_tokens\": 0,\n  \"skip_special_tokens\": true,\n  \"spaces_between_special_tokens\": true,\n  \"truncate_prompt_tokens\": \"<integer>\",\n  \"prompt_logprobs\": \"<integer>\",\n  \"allowed_token_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"bad_words\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"echo\": false,\n  \"add_generation_prompt\": true,\n  \"continue_final_message\": false,\n  \"add_special_tokens\": false,\n  \"documents\": [\n    {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    {\n      \"key_0\": \"<string>\"\n    }\n  ],\n  \"chat_template\": \"<string>\",\n  \"chat_template_kwargs\": \"<object>\",\n  \"mm_processor_kwargs\": \"<object>\",\n  \"guided_json\": \"<string>\",\n  \"guided_regex\": \"<string>\",\n  \"guided_choice\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"guided_grammar\": \"<string>\",\n  \"structural_tag\": \"<string>\",\n  \"guided_decoding_backend\": \"<string>\",\n  \"guided_whitespace_pattern\": \"<string>\",\n  \"guided_meta\": \"<object>\",\n  \"priority\": 0,\n  \"request_id\": \"<string>\",\n  \"logits_processors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"return_tokens_as_token_ids\": \"<boolean>\",\n  \"cache_salt\": \"<string>\",\n  \"kv_transfer_params\": \"<object>\",\n  \"vllm_xargs\": {\n    \"key_0\": \"<string>\"\n  },\n  \"timeout_sec\": \"<number>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "2c544f40-fe8d-47be-bfaa-6d295682b2d6",
+          "name": "Returns either the full response (`application/json`) or streams multiple `ChatCompletionStreamResponse` objects via `text/event-stream`. Note: The response format matches OpenAI's schema but only includes the core fields. Advanced features like logprobs, etc. are not supported.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "external",
+                "api",
+                "inference",
+                "openai",
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"Pi-3.1\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"What is the weather like today?\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 150,\n  \"top_p\": 0.9,\n  \"stream\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"cmpl-xyz789\",\n  \"object\": \"chat.completion\",\n  \"created\": 1627290155,\n  \"model\": \"Pi-3.1\",\n  \"choices\": [\n    {\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"The weather today is sunny with a high of 25°C.\"\n      },\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 13,\n    \"completion_tokens\": 10,\n    \"total_tokens\": 23\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "10f56d17-3e0c-4a0b-b429-f646f4add001",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "external",
+                "api",
+                "inference",
+                "openai",
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"Pi-3.1\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"What is the weather like today?\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 150,\n  \"top_p\": 0.9,\n  \"stream\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "81915234-b501-4d78-95f7-19ecec32032a",
+      "name": "Legacy API Inference Chat",
+      "request": {
+        "name": "Legacy API Inference Chat",
+        "description": {
+          "content": "Calls an Inflection model using the legacy chat API.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "external",
+            "api",
+            "inference"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "origin_endpoint",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"context\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<dateTime>\",\n      \"tool_calls\": [\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"tool_call_id\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<dateTime>\",\n      \"tool_calls\": [\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"tool_call_id\": \"<string>\"\n    }\n  ],\n  \"config\": \"placeholder\",\n  \"metadata\": {\n    \"user_timezone\": \"<string>\",\n    \"user_firstname\": \"<string>\",\n    \"user_country\": \"<string>\",\n    \"user_region\": \"<string>\",\n    \"user_city\": \"<string>\"\n  },\n  \"temperature\": \"<number>\",\n  \"stop_tokens\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"max_tokens\": \"<integer>\",\n  \"top_p\": \"<number>\",\n  \"web_search\": true,\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    }\n  ],\n  \"server_target\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\",\n    \"json_schema\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": \"<object>\",\n      \"strict\": \"<boolean>\"\n    }\n  },\n  \"schemas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "439aa832-291b-47d9-8a1d-289a4542fcdd",
+          "name": "Returns the chat response with text and optional tool calls",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "external",
+                "api",
+                "inference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "origin_endpoint",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"config\": \"Pi-3.1\",\n  \"context\": [\n    {\n      \"type\": \"Instruction\",\n      \"text\": \"You are a helpful assistant.\"\n    },\n    {\n      \"type\": \"Human\",\n      \"text\": \"What is the weather like today?\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 150,\n  \"web_search\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"created\": 1627290155,\n  \"text\": \"The weather today is sunny with a high of 25°C.\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "98bab41d-03a8-4146-82df-fc6c3c89ebc8",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "external",
+                "api",
+                "inference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "origin_endpoint",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"config\": \"Pi-3.1\",\n  \"context\": [\n    {\n      \"type\": \"Instruction\",\n      \"text\": \"You are a helpful assistant.\"\n    },\n    {\n      \"type\": \"Human\",\n      \"text\": \"What is the weather like today?\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 150,\n  \"web_search\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "dc696ae3-a8fe-4fd6-b098-2623659a5b68",
+      "name": "Legacy API Streaming",
+      "request": {
+        "name": "Legacy API Streaming",
+        "description": {
+          "content": "Calls an Inflection model using the legacy chat streaming API.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "external",
+            "api",
+            "inference",
+            "streaming"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "origin_endpoint",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "accessTokenUrl",
+              "value": "token"
+            },
+            {
+              "key": "grant_type",
+              "value": "password_credentials"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"context\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<dateTime>\",\n      \"tool_calls\": [\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"tool_call_id\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<dateTime>\",\n      \"tool_calls\": [\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"function\": {\n            \"arguments\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"type\": \"<string>\"\n        }\n      ],\n      \"tool_call_id\": \"<string>\"\n    }\n  ],\n  \"config\": \"placeholder\",\n  \"metadata\": {\n    \"user_timezone\": \"<string>\",\n    \"user_firstname\": \"<string>\",\n    \"user_country\": \"<string>\",\n    \"user_region\": \"<string>\",\n    \"user_city\": \"<string>\"\n  },\n  \"temperature\": \"<number>\",\n  \"stop_tokens\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"max_tokens\": \"<integer>\",\n  \"top_p\": \"<number>\",\n  \"web_search\": true,\n  \"tools\": [\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    },\n    {\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": \"<object>\"\n      },\n      \"type\": \"function\"\n    }\n  ],\n  \"server_target\": \"<string>\",\n  \"response_format\": {\n    \"type\": \"<string>\",\n    \"json_schema\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": \"<object>\",\n      \"strict\": \"<boolean>\"\n    }\n  },\n  \"schemas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "79a90013-a979-4296-8e7c-51c143b0f1d9",
+          "name": "Streams the chat response with text and optional tool calls",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "external",
+                "api",
+                "inference",
+                "streaming"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "origin_endpoint",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/event-stream"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"config\": \"Pi-3.1\",\n  \"context\": [\n    {\n      \"type\": \"Instruction\",\n      \"text\": \"You are a helpful assistant.\"\n    },\n    {\n      \"type\": \"Human\",\n      \"text\": \"What is the weather like today?\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 150,\n  \"web_search\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/event-stream"
+            }
+          ],
+          "body": "data: {\n  \"created\": 1627290155,\n  \"idx\": 0,\n  \"text\": \"The weather today\",\n  \"tool_calls\": null\n}\n\ndata: {\n  \"created\": 1627290155,\n  \"idx\": 1,\n  \"text\": \" is sunny with a high of 25°C.\",\n  \"tool_calls\": null\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "41af53f6-1518-4b92-a149-e47ec5efa42c",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "external",
+                "api",
+                "inference",
+                "streaming"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "origin_endpoint",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: oauth2",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "<token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"config\": \"Pi-3.1\",\n  \"context\": [\n    {\n      \"type\": \"Instruction\",\n      \"text\": \"You are a helpful assistant.\"\n    },\n    {\n      \"type\": \"Human\",\n      \"text\": \"What is the weather like today?\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 150,\n  \"web_search\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c488d1cd-6728-4753-8581-fb8b73ffa518",
+    "name": "Inflection Inference API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
