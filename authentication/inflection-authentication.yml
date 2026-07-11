@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/inflection-openapi.json
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - password
+schemes:
+- name: OAuth2PasswordBearer
+  type: oauth2
+  flows:
+  - flow: password
+    tokenUrl: token
+    scopes: 0
+  sources:
+  - openapi/inflection-openapi.json
