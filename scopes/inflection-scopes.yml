@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/inflection-openapi.json
+docs: https://developers.inflection.ai/docs/authentication
+note: >-
+  Inflection AI does not use OAuth scopes; the developer API is authenticated with
+  bearer API keys obtained from the developer portal, and no scopes or granular
+  permissions are documented (https://developers.inflection.ai/docs/authentication).
+schemes:
+- name: OAuth2PasswordBearer
+  source: openapi/inflection-openapi.json
+  flows:
+  - flow: password
+    tokenUrl: token
+scopes: []
