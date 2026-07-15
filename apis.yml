@@ -114,6 +114,8 @@ apis:
       Enterprise deployment of Inflection 3.0 models including a purpose-built on-premise server option for data
       locality and TCO optimization. Contact sales.
 common:
+  - type: AgenticAccess
+    url: agentic-access/inflection-agentic-access.yml
   - type: DomainSecurity
     url: security/inflection-domain-security.yml
   - type: Authentication
