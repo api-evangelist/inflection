@@ -1,0 +1,105 @@
+openapi: 3.1.0
+info:
+  title: Inflection Inference Chat Discovery API
+  version: 1.0.0
+tags:
+- name: Discovery
+paths:
+  /v1/discovery/configs:
+    get:
+      summary: Configs
+      description: 'Get all available configs (for use in the chat completion endpoint `model` field) for an organization.
+
+
+        Returns each config''s `name` (aka `model`), `alias` (for UI display), `default_parameters`, and `description`.'
+      operationId: configs_v1_discovery_configs_get
+      security:
+      - OAuth2PasswordBearer: []
+      responses:
+        '200':
+          description: List of configs available for the organization
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConfigForOrgResponse'
+              example:
+              - name: pi_3_1
+                alias: Pi (3.1)
+                default_parameters:
+                  temperature:
+                    range:
+                    - 0
+                    - 1
+                    value: 1.0
+                  maximumLength:
+                    range:
+                    - 1
+                    - 1024
+                    value: 256
+                  topP:
+                    range:
+                    - 0
+                    - 1
+                    value: 0.95
+                  stopTokens:
+                    range: []
+                    value: []
+                  webSearch:
+                    range: []
+                    value: true
+                description: Pi chat assistant based on Llama
+      x-code-samples:
+      - lang: curl Example
+        source: "curl --url https://api.inflection.ai/v1/discovery/configs \\\n  -X GET \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"\n  "
+      tags:
+      - Discovery
+components:
+  schemas:
+    ConfigForOrgResponse:
+      properties:
+        name:
+          type: string
+          title: Name
+        alias:
+          type: string
+          title: Alias
+        default_parameters:
+          type: object
+          title: Default Parameters
+        description:
+          type: string
+          title: Description
+        tags:
+          items:
+            type: string
+          type: array
+          title: Tags
+        is_external:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Is External
+        is_playground:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Is Playground
+          default: false
+      type: object
+      required:
+      - name
+      - alias
+      - default_parameters
+      - description
+      - tags
+      - is_external
+      title: ConfigForOrgResponse
+  securitySchemes:
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: token

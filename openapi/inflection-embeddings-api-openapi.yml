@@ -1,0 +1,843 @@
+openapi: 3.1.0
+info:
+  title: Inflection Inference Chat Embeddings API
+  version: 1.0.0
+tags:
+- name: Embeddings
+paths:
+  /v1/embeddings:
+    post:
+      summary: Embeddings
+      description: Embeddings endpoint for Inflection hosted models.
+      operationId: embeddings_v1_embeddings_post
+      security:
+      - OAuth2PasswordBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - $ref: '#/components/schemas/EmbeddingCompletionRequest'
+              - $ref: '#/components/schemas/EmbeddingChatRequest'
+              title: Request
+              $ref: '#/components/schemas/EmbeddingRequest'
+            example:
+              model: inf_3_1_embedding
+              input: The quick brown fox jumps over the lazy dog
+      responses:
+        '200':
+          description: Returns the embeddings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbeddingResponse'
+              example:
+                id: embd-8b2d80eb72634137842d104f671a712b
+                object: list
+                created: 1751327294
+                model: inf_3_1_embedding
+                data:
+                - index: 0
+                  object: embedding
+                  embedding:
+                  - 0.01
+                  - -0.02
+                  - 0.03
+                usage:
+                  prompt_tokens: 6
+                  completion_tokens: 0
+                  total_tokens: 6
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      x-code-samples:
+      - lang: curl Example
+        source: "curl --url https://api.inflection.ai/v1/embeddings \\\n  -X POST \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -d '{\n    \"model\": \"inf_3_1_embedding\",\n    \"input\": \"The quick brown fox jumps over the lazy dog\"\n  }'"
+      tags:
+      - Embeddings
+components:
+  schemas:
+    ChatCompletionContentPartInputAudioParam:
+      properties:
+        input_audio:
+          $ref: '#/components/schemas/InputAudio'
+        type:
+          type: string
+          enum:
+          - input_audio
+          const: input_audio
+          title: Type
+      type: object
+      required:
+      - input_audio
+      - type
+      title: ChatCompletionContentPartInputAudioParam
+    PromptTokenUsageInfo:
+      properties:
+        cached_tokens:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Cached Tokens
+      additionalProperties: true
+      type: object
+      title: PromptTokenUsageInfo
+    Audio:
+      properties:
+        id:
+          type: string
+          title: Id
+      type: object
+      required:
+      - id
+      title: Audio
+    File:
+      properties:
+        file:
+          $ref: '#/components/schemas/FileFile'
+        type:
+          type: string
+          enum:
+          - file
+          const: file
+          title: Type
+      type: object
+      required:
+      - file
+      - type
+      title: File
+    VideoURL:
+      properties:
+        url:
+          type: string
+          title: Url
+      type: object
+      required:
+      - url
+      title: VideoURL
+    ChatCompletionContentPartImageParam:
+      properties:
+        image_url:
+          $ref: '#/components/schemas/ImageURL'
+        type:
+          type: string
+          enum:
+          - image_url
+          const: image_url
+          title: Type
+      type: object
+      required:
+      - image_url
+      - type
+      title: ChatCompletionContentPartImageParam
+    ChatCompletionSystemMessageParam:
+      properties:
+        content:
+          anyOf:
+          - type: string
+          - items:
+              $ref: '#/components/schemas/ChatCompletionContentPartTextParam'
+            type: array
+          title: Content
+        role:
+          type: string
+          enum:
+          - system
+          const: system
+          title: Role
+        name:
+          type: string
+          title: Name
+      type: object
+      required:
+      - content
+      - role
+      title: ChatCompletionSystemMessageParam
+    ChatCompletionToolMessageParam:
+      properties:
+        content:
+          anyOf:
+          - type: string
+          - items:
+              $ref: '#/components/schemas/ChatCompletionContentPartTextParam'
+            type: array
+          title: Content
+        role:
+          type: string
+          enum:
+          - tool
+          const: tool
+          title: Role
+        tool_call_id:
+          type: string
+          title: Tool Call Id
+      type: object
+      required:
+      - content
+      - role
+      - tool_call_id
+      title: ChatCompletionToolMessageParam
+    ChatCompletionFunctionMessageParam:
+      properties:
+        content:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Content
+        name:
+          type: string
+          title: Name
+        role:
+          type: string
+          enum:
+          - function
+          const: function
+          title: Role
+      type: object
+      required:
+      - content
+      - name
+      - role
+      title: ChatCompletionFunctionMessageParam
+    Custom:
+      properties:
+        input:
+          type: string
+          title: Input
+        name:
+          type: string
+          title: Name
+      type: object
+      required:
+      - input
+      - name
+      title: Custom
+    ChatCompletionContentPartTextParam:
+      properties:
+        text:
+          type: string
+          title: Text
+        type:
+          type: string
+          enum:
+          - text
+          const: text
+          title: Type
+      type: object
+      required:
+      - text
+      - type
+      title: ChatCompletionContentPartTextParam
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    AudioURL:
+      properties:
+        url:
+          type: string
+          title: Url
+      type: object
+      required:
+      - url
+      title: AudioURL
+    ChatCompletionUserMessageParam:
+      properties:
+        content:
+          anyOf:
+          - type: string
+          - items:
+              anyOf:
+              - $ref: '#/components/schemas/ChatCompletionContentPartTextParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartImageParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartInputAudioParam'
+              - $ref: '#/components/schemas/File'
+            type: array
+          title: Content
+        role:
+          type: string
+          enum:
+          - user
+          const: user
+          title: Role
+        name:
+          type: string
+          title: Name
+      type: object
+      required:
+      - content
+      - role
+      title: ChatCompletionUserMessageParam
+    EmbeddingResponse:
+      properties:
+        id:
+          type: string
+          title: Id
+        object:
+          type: string
+          title: Object
+          default: list
+        created:
+          type: integer
+          title: Created
+        model:
+          type: string
+          title: Model
+        data:
+          items:
+            $ref: '#/components/schemas/EmbeddingResponseData'
+          type: array
+          title: Data
+        usage:
+          $ref: '#/components/schemas/UsageInfo'
+      additionalProperties: true
+      type: object
+      required:
+      - model
+      - data
+      - usage
+      title: EmbeddingResponse
+    ChatCompletionAssistantMessageParam:
+      properties:
+        role:
+          type: string
+          enum:
+          - assistant
+          const: assistant
+          title: Role
+        audio:
+          anyOf:
+          - $ref: '#/components/schemas/Audio'
+          - type: 'null'
+        content:
+          anyOf:
+          - type: string
+          - items:
+              anyOf:
+              - $ref: '#/components/schemas/ChatCompletionContentPartTextParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartRefusalParam'
+            type: array
+          - type: 'null'
+          title: Content
+        function_call:
+          anyOf:
+          - $ref: '#/components/schemas/FunctionCall-Input'
+          - type: 'null'
+        name:
+          type: string
+          title: Name
+        refusal:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Refusal
+        tool_calls:
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/ChatCompletionMessageFunctionToolCallParam'
+            - $ref: '#/components/schemas/ChatCompletionMessageCustomToolCallParam'
+          type: array
+          title: Tool Calls
+      type: object
+      required:
+      - role
+      title: ChatCompletionAssistantMessageParam
+    FileFile:
+      properties:
+        file_data:
+          type: string
+          title: File Data
+        file_id:
+          type: string
+          title: File Id
+        filename:
+          type: string
+          title: Filename
+      type: object
+      title: FileFile
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    InputAudio:
+      properties:
+        data:
+          type: string
+          title: Data
+        format:
+          type: string
+          enum:
+          - wav
+          - mp3
+          title: Format
+      type: object
+      required:
+      - data
+      - format
+      title: InputAudio
+    ImageURL:
+      properties:
+        url:
+          type: string
+          title: Url
+        detail:
+          type: string
+          enum:
+          - auto
+          - low
+          - high
+          title: Detail
+      type: object
+      required:
+      - url
+      title: ImageURL
+    ChatCompletionContentPartImageEmbedsParam:
+      properties:
+        image_embeds:
+          anyOf:
+          - type: string
+          - additionalProperties:
+              type: string
+            type: object
+          title: Image Embeds
+        type:
+          type: string
+          enum:
+          - image_embeds
+          const: image_embeds
+          title: Type
+      type: object
+      required:
+      - image_embeds
+      - type
+      title: ChatCompletionContentPartImageEmbedsParam
+    CustomChatCompletionContentSimpleImageParam:
+      properties:
+        image_url:
+          type: string
+          title: Image Url
+      type: object
+      required:
+      - image_url
+      title: CustomChatCompletionContentSimpleImageParam
+      description: "A simpler version of the param that only accepts a plain image_url.\nThis is supported by OpenAI API, although it is not documented.\n\nExample:\n{\n    \"image_url\": \"https://example.com/image.jpg\"\n}"
+    ChatCompletionMessageFunctionToolCallParam:
+      properties:
+        id:
+          type: string
+          title: Id
+        function:
+          $ref: '#/components/schemas/Function'
+        type:
+          type: string
+          enum:
+          - function
+          const: function
+          title: Type
+      type: object
+      required:
+      - id
+      - function
+      - type
+      title: ChatCompletionMessageFunctionToolCallParam
+    Function:
+      properties:
+        arguments:
+          type: string
+          title: Arguments
+        name:
+          type: string
+          title: Name
+      type: object
+      required:
+      - arguments
+      - name
+      title: Function
+    CustomChatCompletionContentSimpleAudioParam:
+      properties:
+        audio_url:
+          type: string
+          title: Audio Url
+      type: object
+      required:
+      - audio_url
+      title: CustomChatCompletionContentSimpleAudioParam
+      description: "A simpler version of the param that only accepts a plain audio_url.\n\nExample:\n{\n    \"audio_url\": \"https://example.com/audio.mp3\"\n}"
+    CustomChatCompletionContentSimpleVideoParam:
+      properties:
+        video_url:
+          type: string
+          title: Video Url
+      type: object
+      required:
+      - video_url
+      title: CustomChatCompletionContentSimpleVideoParam
+      description: "A simpler version of the param that only accepts a plain audio_url.\n\nExample:\n{\n    \"video_url\": \"https://example.com/video.mp4\"\n}"
+    ChatCompletionContentPartAudioParam:
+      properties:
+        audio_url:
+          $ref: '#/components/schemas/AudioURL'
+        type:
+          type: string
+          enum:
+          - audio_url
+          const: audio_url
+          title: Type
+      type: object
+      required:
+      - audio_url
+      - type
+      title: ChatCompletionContentPartAudioParam
+    ChatCompletionContentPartRefusalParam:
+      properties:
+        refusal:
+          type: string
+          title: Refusal
+        type:
+          type: string
+          enum:
+          - refusal
+          const: refusal
+          title: Type
+      type: object
+      required:
+      - refusal
+      - type
+      title: ChatCompletionContentPartRefusalParam
+    ChatCompletionDeveloperMessageParam:
+      properties:
+        content:
+          anyOf:
+          - type: string
+          - items:
+              $ref: '#/components/schemas/ChatCompletionContentPartTextParam'
+            type: array
+          title: Content
+        role:
+          type: string
+          enum:
+          - developer
+          const: developer
+          title: Role
+        name:
+          type: string
+          title: Name
+      type: object
+      required:
+      - content
+      - role
+      title: ChatCompletionDeveloperMessageParam
+    ChatCompletionContentPartVideoParam:
+      properties:
+        video_url:
+          $ref: '#/components/schemas/VideoURL'
+        type:
+          type: string
+          enum:
+          - video_url
+          const: video_url
+          title: Type
+      type: object
+      required:
+      - video_url
+      - type
+      title: ChatCompletionContentPartVideoParam
+    FunctionCall-Input:
+      properties:
+        arguments:
+          type: string
+          title: Arguments
+        name:
+          type: string
+          title: Name
+      type: object
+      required:
+      - arguments
+      - name
+      title: FunctionCall
+    EmbeddingCompletionRequest:
+      properties:
+        model:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Model
+        input:
+          anyOf:
+          - items:
+              type: integer
+            type: array
+          - items:
+              items:
+                type: integer
+              type: array
+            type: array
+          - type: string
+          - items:
+              type: string
+            type: array
+          title: Input
+        encoding_format:
+          type: string
+          enum:
+          - float
+          - base64
+          title: Encoding Format
+          default: float
+        dimensions:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Dimensions
+        user:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: User
+        truncate_prompt_tokens:
+          anyOf:
+          - type: integer
+            minimum: -1.0
+          - type: 'null'
+          title: Truncate Prompt Tokens
+        additional_data:
+          anyOf:
+          - {}
+          - type: 'null'
+          title: Additional Data
+        add_special_tokens:
+          type: boolean
+          title: Add Special Tokens
+          description: If true (the default), special tokens (e.g. BOS) will be added to the prompt.
+          default: true
+        priority:
+          type: integer
+          title: Priority
+          description: 'The priority of the request (lower means earlier handling; default: 0). Any priority other than 0 will raise an error if the served model does not use priority scheduling.'
+          default: 0
+      additionalProperties: true
+      type: object
+      required:
+      - input
+      title: EmbeddingCompletionRequest
+    EmbeddingResponseData:
+      properties:
+        index:
+          type: integer
+          title: Index
+        object:
+          type: string
+          title: Object
+          default: embedding
+        embedding:
+          anyOf:
+          - items:
+              type: number
+            type: array
+          - type: string
+          title: Embedding
+      additionalProperties: true
+      type: object
+      required:
+      - index
+      - embedding
+      title: EmbeddingResponseData
+    CustomChatCompletionMessageParam:
+      properties:
+        role:
+          type: string
+          title: Role
+        content:
+          anyOf:
+          - type: string
+          - items:
+              anyOf:
+              - $ref: '#/components/schemas/ChatCompletionContentPartTextParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartImageParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartInputAudioParam'
+              - $ref: '#/components/schemas/File'
+              - $ref: '#/components/schemas/ChatCompletionContentPartAudioParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartVideoParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartRefusalParam'
+              - $ref: '#/components/schemas/CustomChatCompletionContentSimpleImageParam'
+              - $ref: '#/components/schemas/ChatCompletionContentPartImageEmbedsParam'
+              - $ref: '#/components/schemas/CustomChatCompletionContentSimpleAudioParam'
+              - $ref: '#/components/schemas/CustomChatCompletionContentSimpleVideoParam'
+              - type: string
+            type: array
+          title: Content
+        name:
+          type: string
+          title: Name
+        tool_call_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Tool Call Id
+        tool_calls:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/ChatCompletionMessageFunctionToolCallParam'
+            type: array
+          - type: 'null'
+          title: Tool Calls
+      type: object
+      required:
+      - role
+      title: CustomChatCompletionMessageParam
+      description: Enables custom roles in the Chat Completion API.
+    EmbeddingChatRequest:
+      properties:
+        model:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Model
+        messages:
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/ChatCompletionDeveloperMessageParam'
+            - $ref: '#/components/schemas/ChatCompletionSystemMessageParam'
+            - $ref: '#/components/schemas/ChatCompletionUserMessageParam'
+            - $ref: '#/components/schemas/ChatCompletionAssistantMessageParam'
+            - $ref: '#/components/schemas/ChatCompletionToolMessageParam'
+            - $ref: '#/components/schemas/ChatCompletionFunctionMessageParam'
+            - $ref: '#/components/schemas/CustomChatCompletionMessageParam'
+          type: array
+          title: Messages
+        encoding_format:
+          type: string
+          enum:
+          - float
+          - base64
+          title: Encoding Format
+          default: float
+        dimensions:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Dimensions
+        user:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: User
+        truncate_prompt_tokens:
+          anyOf:
+          - type: integer
+            minimum: -1.0
+          - type: 'null'
+          title: Truncate Prompt Tokens
+        additional_data:
+          anyOf:
+          - {}
+          - type: 'null'
+          title: Additional Data
+        add_special_tokens:
+          type: boolean
+          title: Add Special Tokens
+          description: If true, special tokens (e.g. BOS) will be added to the prompt on top of what is added by the chat template. For most models, the chat template takes care of adding the special tokens so this should be set to false (as is the default).
+          default: false
+        chat_template:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Chat Template
+          description: A Jinja template to use for this conversion. As of transformers v4.44, default chat template is no longer allowed, so you must provide a chat template if the tokenizer does not define one.
+        chat_template_kwargs:
+          anyOf:
+          - type: object
+          - type: 'null'
+          title: Chat Template Kwargs
+          description: Additional keyword args to pass to the template renderer. Will be accessible by the chat template.
+        mm_processor_kwargs:
+          anyOf:
+          - type: object
+          - type: 'null'
+          title: Mm Processor Kwargs
+          description: Additional kwargs to pass to the HF processor.
+        priority:
+          type: integer
+          title: Priority
+          description: 'The priority of the request (lower means earlier handling; default: 0). Any priority other than 0 will raise an error if the served model does not use priority scheduling.'
+          default: 0
+      additionalProperties: true
+      type: object
+      required:
+      - messages
+      title: EmbeddingChatRequest
+    ChatCompletionMessageCustomToolCallParam:
+      properties:
+        id:
+          type: string
+          title: Id
+        custom:
+          $ref: '#/components/schemas/Custom'
+        type:
+          type: string
+          enum:
+          - custom
+          const: custom
+          title: Type
+      type: object
+      required:
+      - id
+      - custom
+      - type
+      title: ChatCompletionMessageCustomToolCallParam
+    UsageInfo:
+      properties:
+        prompt_tokens:
+          type: integer
+          title: Prompt Tokens
+          default: 0
+        total_tokens:
+          type: integer
+          title: Total Tokens
+          default: 0
+        completion_tokens:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Completion Tokens
+          default: 0
+        prompt_tokens_details:
+          anyOf:
+          - $ref: '#/components/schemas/PromptTokenUsageInfo'
+          - type: 'null'
+      additionalProperties: true
+      type: object
+      title: UsageInfo
+  securitySchemes:
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: token

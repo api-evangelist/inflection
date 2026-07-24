@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Inflection Inference Chat Status API
+  version: 1.0.0
+tags:
+- name: Status
+paths:
+  /status:
+    get:
+      summary: 'Status '
+      operationId: status__status_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+      tags:
+      - Status
+components:
+  schemas:
+    StatusResponse:
+      properties:
+        status:
+          type: string
+          title: Status
+      type: object
+      required:
+      - status
+      title: StatusResponse
+  securitySchemes:
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: token
