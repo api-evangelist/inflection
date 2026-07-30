@@ -6,7 +6,20 @@ description: >-
   Inflection AI is a foundation-model company behind the Pi personal AI assistant and the Inflection 3.0 family of
   empathetic large language models (Pi, Productivity). The Inflection Developer API serves these proprietary models for
   enterprise integration with cloud and on-premise deployment options.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/inflection.png
 tags:
   - AI
   - LLM
@@ -18,101 +31,116 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: inflection:inflection-chat-api
-    name: Inflection Chat API
-    tags:
-      - Chat
-      - Completions
-      - LLM
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developers.inflection.ai/docs
-    baseURL: https://layercake.pubwestus3.inf7ks8.com
-    properties:
-      - url: https://developers.inflection.ai/docs
-        type: Documentation
-      - url: https://developers.inflection.ai/docs/api-reference
-        type: APIReference
-      - url: openapi/inflection-openapi.json
-        type: OpenAPI
-    description: >-
-      Generates chat-style completions against Inflection's empathetic foundation models (inflection_3_pi,
-      inflection_3_productivity, Pi-3.1) with streaming responses.
-  - aid: inflection:inflection-models-api
-    name: Inflection Models API
-    tags:
-      - Models
-      - Catalog
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developers.inflection.ai/docs/api-reference
-    baseURL: https://layercake.pubwestus3.inf7ks8.com
-    properties:
-      - url: https://developers.inflection.ai/docs/api-reference
-        type: APIReference
-      - url: openapi/inflection-openapi.json
-        type: OpenAPI
-    description: Lists the available Inflection 3.0 models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with metadata.
-  - aid: inflection:inflection-playground
-    name: Inflection Playground
-    tags:
-      - Playground
-      - Testing
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developers.inflection.ai/playground
-    baseURL: https://developers.inflection.ai
-    properties:
-      - url: https://developers.inflection.ai/playground
-        type: Documentation
-      - url: openapi/inflection-openapi.json
-        type: OpenAPI
-    description: Browser-based playground for prototyping prompts and evaluating Inflection 3.0 models.
-  - aid: inflection:inflection-usage-api
-    name: Inflection Usage API
-    tags:
-      - Usage
-      - Metrics
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developers.inflection.ai/usage
-    baseURL: https://developers.inflection.ai
-    properties:
-      - url: https://developers.inflection.ai/usage
-        type: Documentation
-      - url: openapi/inflection-openapi.json
-        type: OpenAPI
-    description: Surfaces usage metrics and rate-limit consumption for the developer account.
-  - aid: inflection:inflection-pi-app
-    name: Pi Personal AI
-    tags:
-      - Pi
-      - Consumer
-      - Personal AI
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://pi.ai/
-    baseURL: https://pi.ai/
-    properties:
-      - url: https://pi.ai/
-        type: Website
-      - url: openapi/inflection-openapi.json
-        type: OpenAPI
-    description: >-
-      Pi consumer chat product (web, iOS, Android, WhatsApp, SMS, Telegram) - empathetic personal AI assistant. Not a
-      developer surface; access is via consumer apps.
-  - aid: inflection:inflection-enterprise
-    name: Inflection for Enterprise
-    tags:
-      - Enterprise
-      - On-Prem
-      - Sovereign AI
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://inflection.ai/
-    baseURL: https://inflection.ai/
-    properties:
-      - url: https://inflection.ai/
-        type: Documentation
-      - url: openapi/inflection-openapi.json
-        type: OpenAPI
-    description: >-
-      Enterprise deployment of Inflection 3.0 models including a purpose-built on-premise server option for data
-      locality and TCO optimization. Contact sales.
+- aid: inflection:inflection-chat-api
+  name: Inflection AI Chat API
+  description: The Chat API from Inflection AI — 2 operation(s) for chat.
+  humanURL: https://developers.inflection.ai/docs
+  baseURL: https://layercake.pubwestus3.inf7ks8.com
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/inflection-chat-api-openapi.yml
+  - type: Documentation
+    url: https://developers.inflection.ai/docs
+  - type: APIReference
+    url: https://developers.inflection.ai/docs/api-reference
+  - type: Documentation
+    url: https://developers.inflection.ai/playground
+  - type: Documentation
+    url: https://developers.inflection.ai/usage
+  - type: Website
+    url: https://pi.ai/
+  - type: Documentation
+    url: https://inflection.ai/
+- aid: inflection:inflection-discovery-api
+  name: Inflection AI Discovery API
+  description: The Discovery API from Inflection AI — 1 operation(s) for discovery.
+  humanURL: https://developers.inflection.ai/docs
+  baseURL: https://layercake.pubwestus3.inf7ks8.com
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/inflection-discovery-api-openapi.yml
+  - type: Documentation
+    url: https://developers.inflection.ai/docs
+  - type: APIReference
+    url: https://developers.inflection.ai/docs/api-reference
+  - type: Documentation
+    url: https://developers.inflection.ai/playground
+  - type: Documentation
+    url: https://developers.inflection.ai/usage
+  - type: Website
+    url: https://pi.ai/
+  - type: Documentation
+    url: https://inflection.ai/
+- aid: inflection:inflection-embeddings-api
+  name: Inflection AI Embeddings API
+  description: The Embeddings API from Inflection AI — 1 operation(s) for embeddings.
+  humanURL: https://developers.inflection.ai/docs
+  baseURL: https://layercake.pubwestus3.inf7ks8.com
+  tags:
+  - Embeddings
+  properties:
+  - type: OpenAPI
+    url: openapi/inflection-embeddings-api-openapi.yml
+  - type: Documentation
+    url: https://developers.inflection.ai/docs
+  - type: APIReference
+    url: https://developers.inflection.ai/docs/api-reference
+  - type: Documentation
+    url: https://developers.inflection.ai/playground
+  - type: Documentation
+    url: https://developers.inflection.ai/usage
+  - type: Website
+    url: https://pi.ai/
+  - type: Documentation
+    url: https://inflection.ai/
+- aid: inflection:inflection-external-api
+  name: Inflection AI External API
+  description: The External API from Inflection AI — 3 operation(s) for external.
+  humanURL: https://developers.inflection.ai/docs
+  baseURL: https://layercake.pubwestus3.inf7ks8.com
+  tags:
+  - External
+  properties:
+  - type: OpenAPI
+    url: openapi/inflection-external-api-openapi.yml
+  - type: Documentation
+    url: https://developers.inflection.ai/docs
+  - type: APIReference
+    url: https://developers.inflection.ai/docs/api-reference
+  - type: Documentation
+    url: https://developers.inflection.ai/playground
+  - type: Documentation
+    url: https://developers.inflection.ai/usage
+  - type: Website
+    url: https://pi.ai/
+  - type: Documentation
+    url: https://inflection.ai/
+- aid: inflection:inflection-status-api
+  name: Inflection AI Status API
+  description: The Status API from Inflection AI — 1 operation(s) for status.
+  humanURL: https://developers.inflection.ai/docs
+  baseURL: https://layercake.pubwestus3.inf7ks8.com
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/inflection-status-api-openapi.yml
+  - type: Documentation
+    url: https://developers.inflection.ai/docs
+  - type: APIReference
+    url: https://developers.inflection.ai/docs/api-reference
+  - type: Documentation
+    url: https://developers.inflection.ai/playground
+  - type: Documentation
+    url: https://developers.inflection.ai/usage
+  - type: Website
+    url: https://pi.ai/
+  - type: Documentation
+    url: https://inflection.ai/
 common:
   - type: AgenticAccess
     url: agentic-access/inflection-agentic-access.yml
