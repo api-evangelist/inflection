@@ -1,0 +1,24 @@
+{
+  "provider": "inflection",
+  "sources": [
+    "inflection-chat-api-openapi.yml",
+    "inflection-discovery-api-openapi.yml",
+    "inflection-embeddings-api-openapi.yml",
+    "inflection-external-api-openapi.yml",
+    "inflection-status-api-openapi.yml"
+  ],
+  "outputs": [
+    "inflection-chat-api-openapi.yml",
+    "inflection-discovery-api-openapi.yml",
+    "inflection-embeddings-api-openapi.yml",
+    "inflection-external-api-openapi.yml",
+    "inflection-status-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "inflection-embeddings-api-openapi.yml: dangling $ref: #/components/schemas/EmbeddingRequest"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
