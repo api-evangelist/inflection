@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inflection Inference Chat External API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "External",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Legacy Chat Completions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/external/api/inference/openai/v1/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "resource_owner_password_credentials",
+              "accessTokenUrl": "token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Chat completions compatible endpoint for legacy Inflection models.\n\nProvides a compatibility chat completions endpoint to talk with any Inflection model."
+        },
+        {
+          "info": {
+            "name": "Legacy API Inference Chat",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/external/api/inference",
+            "params": [
+              {
+                "name": "origin_endpoint",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "resource_owner_password_credentials",
+              "accessTokenUrl": "token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Calls an Inflection model using the legacy chat API."
+        },
+        {
+          "info": {
+            "name": "Legacy API Streaming",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/external/api/inference/streaming",
+            "params": [
+              {
+                "name": "origin_endpoint",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "resource_owner_password_credentials",
+              "accessTokenUrl": "token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Calls an Inflection model using the legacy chat streaming API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

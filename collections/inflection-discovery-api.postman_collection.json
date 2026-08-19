@@ -1,0 +1,126 @@
+{
+  "item": [
+    {
+      "id": "bdc314e5-0429-434e-89e3-6f0b66b4f135",
+      "name": "Discovery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7a03be50-a663-4550-8631-ecec89fdc921",
+          "name": "Configs",
+          "request": {
+            "name": "Configs",
+            "description": {
+              "content": "Get all available configs (for use in the chat completion endpoint `model` field) for an organization.\n\nReturns each config's `name` (aka `model`), `alias` (for UI display), `default_parameters`, and `description`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "discovery",
+                "configs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "accessTokenUrl",
+                  "value": "token"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "edf46c1d-d854-4eef-82e1-f6efd36f10bf",
+              "name": "List of configs available for the organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "discovery",
+                    "configs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"pi_3_1\",\n    \"alias\": \"Pi (3.1)\",\n    \"default_parameters\": {\n      \"temperature\": {\n        \"range\": [\n          0,\n          1\n        ],\n        \"value\": 1\n      },\n      \"maximumLength\": {\n        \"range\": [\n          1,\n          1024\n        ],\n        \"value\": 256\n      },\n      \"topP\": {\n        \"range\": [\n          0,\n          1\n        ],\n        \"value\": 0.95\n      },\n      \"stopTokens\": {\n        \"range\": [],\n        \"value\": []\n      },\n      \"webSearch\": {\n        \"range\": [],\n        \"value\": true\n      }\n    },\n    \"description\": \"Pi chat assistant based on Llama\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cd201195-ce15-49ec-ba75-f4b5134042c9",
+    "name": "Inflection Inference Chat Discovery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
