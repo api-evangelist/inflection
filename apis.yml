@@ -21,6 +21,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/inflection.png
 tags:
+  - Artificial Intelligence
+  - LLM
+  - Personal AI
+  - PI
+  - Foundation Models
+  - Empathetic AI
+tags_raw:
   - AI
   - LLM
   - Personal AI
