@@ -1,11 +1,7 @@
 {
   "provider": "inflection",
   "sources": [
-    "inflection-chat-api-openapi.yml",
-    "inflection-discovery-api-openapi.yml",
-    "inflection-embeddings-api-openapi.yml",
-    "inflection-external-api-openapi.yml",
-    "inflection-status-api-openapi.yml"
+    "_original/inflection-openapi.json"
   ],
   "outputs": [
     "inflection-chat-api-openapi.yml",
@@ -16,9 +12,32 @@
   ],
   "archived": [],
   "errors": [
-    "inflection-embeddings-api-openapi.yml: dangling $ref: #/components/schemas/EmbeddingRequest"
+    "inflection-openapi.json: dangling $ref: #/components/schemas/EmbeddingRequest"
   ],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "inflection-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "inflection-openapi.json: tagged paths GET /status -> Status",
+    "inflection-openapi.json: tagged paths POST /v1/chat/completions -> Chat",
+    "inflection-openapi.json: tagged paths POST /v1/chat/attributes -> Chat",
+    "inflection-openapi.json: tagged paths POST /v1/embeddings -> Embeddings",
+    "inflection-openapi.json: tagged paths GET /v1/discovery/configs -> Discovery",
+    "inflection-openapi.json: tagged paths POST /external/api/inference/openai/v1/chat/completions -> External",
+    "inflection-openapi.json: tagged paths POST /external/api/inference -> External",
+    "inflection-openapi.json: tagged paths POST /external/api/inference/streaming -> External",
+    "inflection-openapi.json: declared missing tag: Chat",
+    "inflection-openapi.json: declared missing tag: Discovery",
+    "inflection-openapi.json: declared missing tag: Embeddings",
+    "inflection-openapi.json: declared missing tag: External",
+    "inflection-openapi.json: declared missing tag: Status",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "inflection-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inflection-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inflection-embeddings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inflection-external-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "inflection-status-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
