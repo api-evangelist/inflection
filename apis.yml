@@ -161,6 +161,9 @@ apis:
   - type: Documentation
     url: https://inflection.ai/
 common:
+  - type: CapabilityMap
+    url: capabilities/inflection-capability-edges.yml
+    name: Inflection AI Business Capability Map
   - type: AgenticAccess
     url: agentic-access/inflection-agentic-access.yml
   - type: DomainSecurity
