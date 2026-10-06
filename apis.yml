@@ -47,7 +47,7 @@ tags_raw:
   - Foundation Models
   - Empathetic AI
 created: '2026-05-08'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: inflection:inflection-chat-api
@@ -161,6 +161,8 @@ apis:
   - type: Documentation
     url: https://inflection.ai/
 common:
+  - url: https://inflection.ai/blog
+    type: Blog
   - type: CapabilityMap
     url: capabilities/inflection-capability-edges.yml
     name: Inflection AI Business Capability Map
