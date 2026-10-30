@@ -1,4 +1,4 @@
-# Inflection AI (inflection)
+# Inflection AI
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,153 +66,130 @@
 
 Inflection AI is a foundation-model company behind the Pi personal AI assistant and the Inflection 3.0 family of empathetic large language models (Pi, Productivity). The Inflection Developer API serves these proprietary models for enterprise integration with cloud and on-premise deployment options.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/inflection/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/inflection/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · LLM · Personal AI · PI · Foundation Models · Empathetic AI
 
-## Tags
+## Inflection AI on APIs.io
 
-- AI
-- LLM
-- Personal AI
-- Pi
-- Foundation Models
-- Empathetic AI
+Everything profiled for Inflection AI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/inflection/](https://apis.io/providers/inflection/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (5)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-19
+- [Inflection AI Chat API](https://apis.io/apis/inflection/inflection-chat-api/) — The Chat API from Inflection AI — 2 operation(s) for chat.
+- [Inflection AI Discovery API](https://apis.io/apis/inflection/inflection-discovery-api/) — The Discovery API from Inflection AI — 1 operation(s) for discovery.
+- [Inflection AI Embeddings API](https://apis.io/apis/inflection/inflection-embeddings-api/) — The Embeddings API from Inflection AI — 1 operation(s) for embeddings.
+- [Inflection AI External API](https://apis.io/apis/inflection/inflection-external-api/) — The External API from Inflection AI — 3 operation(s) for external.
+- [Inflection AI Status API](https://apis.io/apis/inflection/inflection-status-api/) — The Status API from Inflection AI — 1 operation(s) for status.
 
-## APIs
+### Published properties
 
-### Inflection Chat API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Generates chat-style completions against Inflection's empathetic foundation models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with streaming responses.
+#### Agentic access (1)
 
-- **Human URL:** [https://developers.inflection.ai/docs](https://developers.inflection.ai/docs)
-- **Base URL:** `https://layercake.pubwestus3.inf7ks8.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Inflection Agentic Access](https://apis.io/agentic-access/inflection/inflection-agentic-access/)
 
-- Chat
-- Completions
-- LLM
+#### Collections (6)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://developers.inflection.ai/docs)
-- [API Reference](https://developers.inflection.ai/docs/api-reference)
-- [OpenAPI](openapi/inflection-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/inflection.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/inflection.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Inflection Inference API](https://apis.io/collections/inflection/open-inflection/)
+- [Inflection Inference Chat API](https://apis.io/collections/inflection/open-inflection-chat-api/)
+- [Inflection Inference Chat Discovery API](https://apis.io/collections/inflection/open-inflection-discovery-api/)
+- [Inflection Inference Chat Embeddings API](https://apis.io/collections/inflection/open-inflection-embeddings-api/)
+- [Inflection Inference Chat External API](https://apis.io/collections/inflection/open-inflection-external-api/)
+- [Inflection Inference Chat Status API](https://apis.io/collections/inflection/open-inflection-status-api/)
 
-### Inflection Models API
+#### Security (2)
 
-Lists the available Inflection 3.0 models (inflection_3_pi, inflection_3_productivity, Pi-3.1) with metadata.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://developers.inflection.ai/docs/api-reference](https://developers.inflection.ai/docs/api-reference)
-- **Base URL:** `https://layercake.pubwestus3.inf7ks8.com`
+- [Inflection Authentication](https://apis.io/security/inflection/inflection-authentication/)
+- [Inflection Domain Security](https://apis.io/security/inflection/inflection-domain-security/)
 
-#### Tags
+#### OAuth scopes (1)
 
-- Models
-- Catalog
+The permissions the API asks for.
 
-#### Properties
+- [Inflection Scopes](https://apis.io/scopes/inflection/inflection-scopes/)
 
-- [API Reference](https://developers.inflection.ai/docs/api-reference)
-- [OpenAPI](openapi/inflection-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/inflection.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/inflection.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Inflection Playground
+Published plans, tiers and prices.
 
-Browser-based playground for prototyping prompts and evaluating Inflection 3.0 models.
+- [Inflection Plans Pricing](https://apis.io/plans/inflection/inflection-plans-pricing/)
 
-- **Human URL:** [https://developers.inflection.ai/playground](https://developers.inflection.ai/playground)
-- **Base URL:** `https://developers.inflection.ai`
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Playground
-- Testing
+- [Inflection Rate Limits](https://apis.io/rate-limits/inflection/inflection-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://developers.inflection.ai/playground)
-- [OpenAPI](openapi/inflection-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/inflection.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/inflection.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-### Inflection Usage API
+- [Inflection Finops](https://apis.io/finops/inflection/inflection-finops/)
 
-Surfaces usage metrics and rate-limit consumption for the developer account.
+## Where to find this API
 
-- **Human URL:** [https://developers.inflection.ai/usage](https://developers.inflection.ai/usage)
-- **Base URL:** `https://developers.inflection.ai`
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Usage
-- Metrics
-
-#### Properties
-
-- [Documentation](https://developers.inflection.ai/usage)
-- [OpenAPI](openapi/inflection-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/inflection.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/inflection.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Pi Personal AI
-
-Pi consumer chat product (web, iOS, Android, WhatsApp, SMS, Telegram) - empathetic personal AI assistant. Not a developer surface; access is via consumer apps.
-
-- **Human URL:** [https://pi.ai/](https://pi.ai/)
-- **Base URL:** `https://pi.ai/`
-
-#### Tags
-
-- Pi
-- Consumer
-- Personal AI
-
-#### Properties
-
-- [Website](https://pi.ai/)
-- [OpenAPI](openapi/inflection-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/inflection.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/inflection.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Inflection for Enterprise
-
-Enterprise deployment of Inflection 3.0 models including a purpose-built on-premise server option for data locality and TCO optimization. Contact sales.
-
-- **Human URL:** [https://inflection.ai/](https://inflection.ai/)
-- **Base URL:** `https://inflection.ai/`
-
-#### Tags
-
-- Enterprise
-- On-Prem
-- Sovereign AI
-
-#### Properties
-
-- [Documentation](https://inflection.ai/)
-- [OpenAPI](openapi/inflection-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/inflection.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/inflection.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/InflectionAI)
-- [LinkedIn](https://www.linkedin.com/company/inflectionai)
 - [Website](https://inflection.ai/)
 - [Documentation](https://developers.inflection.ai/)
-- [Plans](plans/inflection-plans-pricing.yml)
-- [Rate Limits](rate-limits/inflection-rate-limits.yml)
-- [Fin Ops](finops/inflection-finops.yml)
+- [Blog](https://inflection.ai/blog)
+- [GitHub](https://github.com/InflectionAI)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 40.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 27.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 28.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.0** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/inflection/](https://apis.io/providers/inflection/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Inflection AI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/inflection/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
